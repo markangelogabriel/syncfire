@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> Base SyncFire</title>
+
+    <script src="lib/sockjs-0.2.1.min.js"></script>
+    <script src="lib/vertxbus.js"></script>
+
+    <script src="lib/syncfire.js"></script>
+
+</head>
+
+<body>
+	Hi! <br/>
+	<button id="connect" onclick="connectToServer()"> Connect To Server </button>
+</body>
+
+<script>
+	//What you want to happen when connection has been established
+	function onOpenConnection(){
+		alert("Connection opened!");
+	}
+	
+    function connectToServer(){
+		var login_details = {};
+		syncfire.openConnection(login_details, onOpenConnection);
+	}
+</script>
+
+</html>
